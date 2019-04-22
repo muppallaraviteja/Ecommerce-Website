@@ -1,0 +1,29 @@
+<section fxLayout="column" fxLayoutAlign="center center" class="cart">
+	<h3 id="cart-title">Shopping Cart</h3>
+	<div fxLayoutGap="2rem" fxLayoutAlign="center center" class="card-container" *ngFor="let product of cartProducts">
+		<mat-card>
+			<mat-card-content>
+				<img class="card-item-image" src="{{product.imageUrl}}" alt="product" />
+			</mat-card-content>
+		</mat-card>
+		<p id="title">{{product.title}}</p>
+		<p id="price">${{product.price}}</p>
+		<mat-label fxShow.lt-md="false">quantity</mat-label>
+		<mat-select id="quantity-select" (selectionChange)="changeQuantity(product, $event.value - 1)" style="width:2rem" name="size" [placeholder]="product.quantity">
+			<mat-option id="quantity-select" *ngFor="let quantity of quantities" [(value)]="quantities[quantity]" >
+				{{ quantity }}
+			</mat-option>
+		</mat-select>
+		<button mat-button (click)="removeProductFromCart(product)"><mat-icon>remove_shopping_cart</mat-icon></button>
+	</div>
+	<mat-label *ngIf="sum>0" id="sum">Sum: ${{sum}}</mat-label>
+	<mat-label *ngIf="sum>0" id="sum">Tax: ${{ sum * taxRate | number:'1.0-2' }}</mat-label>
+	<mat-label *ngIf="sum>0" id="afterTaxSum">Total Sum: ${{ sum * (1 + taxRate) | number:'1.0-2' }}</mat-label>
+	<section fxLayout="row" fxLayoutGap="1rem" class="buttons">
+		<button *ngIf="sum>0" id="checkout" mat-raised-button (click)="checkOut()">Check Out</button>
+		<button *ngIf="sum>0" id="back" mat-raised-button (click)="backToProducts()">Want More?</button>
+	</section>
+	<summary *ngIf="sum === 0" class="empty-panda-container">
+		<img src="../../assets/empty-cart-panda.png" alt="empty-cart" />
+	</summary>
+</section>

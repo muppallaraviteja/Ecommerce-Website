@@ -1,0 +1,29 @@
+/* set bottom margin of order summary */
+#order_summary {
+	margin-bottom: 25%;
+}
+
+/* configure placeholder text's margin, font, and alignment */
+#empty_text {
+	margin-top: 2rem;
+	font-size: 2rem;
+	text-align: center;
+}
+
+/* let table take up 60% of page width */
+.mat-table {
+	width: 60%;
+}
+
+/* set buttons' background and text color */
+button {
+	background-color: #8ABAD3;
+	color: white;
+}
+
+/* for mobile layouts */
+@media screen and (max-width: 600px) {
+	.mat-table {
+		width: 90%;
+	}
+}

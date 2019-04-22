@@ -1,0 +1,21 @@
+<section class="login">
+	<section class="login-top-banner">
+		<img src="../../../assets/welcome_banner_optimized.png" alt="landing_image" />
+		<section class="login-text" fxShow.lt-md="false">
+			<p id="main_text">Welcome</p>
+			<p id="sub_text">To a New Journey Filled with Hope, Passion, and Grace...</p>
+		</section>
+	</section>
+	<section class="login-form">
+		<form #f="ngForm" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1em" (ngSubmit)="onSubmit(f)">
+			<mat-form-field>
+				<input matInput ngModel required name="email" email type="email" placeholder="Your Email" />
+			</mat-form-field>
+			<mat-form-field>
+				<input matInput ngModel required name="password" password type="password" minlength="6" placeholder="Your Password" />
+			</mat-form-field>
+			<button mat-raised-button [disabled]="f.invalid" type="submit" *ngIf="!loading">Welcome back, we missed you!</button>
+			<mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
+		</form>
+	</section>
+</section>

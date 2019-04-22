@@ -1,0 +1,138 @@
+/* set the button style */
+button {
+	background-color: #8ABAD3;
+	color: white;
+	font-family: futura-pt, sans-serif;
+	font-weight: 300;
+}
+
+/* place form at the center of page and leave some margin*/
+form {
+	margin: 0 3rem;
+	width: 80%;
+}
+
+/* make the font size greater; center the header and leave some vertical margins*/
+.payment-form-header {
+	font-size: 1.5rem;
+	margin: 2rem auto;
+}
+
+/* set right border of form; give it a 40% width of total form width */
+.payment-form-container {
+	width: 40%;
+	border-right: 1px solid;
+}
+
+/* let this portion take up rest of the space; add border */
+.payment-product-container {
+	margin: 0 auto;
+	width: 60%;
+	padding: 2rem;
+	border-bottom: 1px solid;
+	border-bottom-width: thin;
+}
+
+/* let payment details take up the entire space*/
+.payment-summary {
+	flex-grow: 1;
+}
+
+/* leave margin in between product image and title*/
+.product-card {
+	margin-right: auto;
+}
+
+.product-data {
+	width: 70%;
+}
+
+.product-price,
+.product-quantity {
+	margin: 0 2rem;
+}
+
+/* set the form header relative to their original position to space out the headers*/
+.product-price-header {
+	position: relative;
+	left: 3rem;
+}
+
+.product-quantity-header {
+	position: relative;
+	left: 2rem;
+}
+
+.product-title {
+	margin-right: auto;
+	width: 50%;
+}
+
+.price-summary {
+	width: 100%;
+}
+
+/* set margin in between form columns*/
+.price-summary-data {
+	margin: 1rem 25% 1rem auto;
+}
+
+/* specify the image size on desktop view*/
+.card-item-image {
+	max-height: 80px;
+	max-width: 80px;
+}
+
+/* let each row in payment form take up the entire width*/
+.row {
+	width: 100%;
+}
+
+/* for longer fields that take up half of the row width */
+.row-medium {
+	width: 50%;
+}
+
+#city,
+#state {
+	width: 40%;
+}
+
+#zip {
+	width: 20%;
+}
+
+/* leave vertical margin for the payment button; center the button */
+#payment-button {
+	margin: 1rem auto;
+}
+
+#total-amount {
+	font-weight: 300;
+	margin: 1rem auto;
+}
+
+/* for mobile layouts */
+@media screen and (max-width: 600px) {
+	/* let payment take up the entire width; remove right border */
+	.payment-form-container {
+		width: 100%;
+		border-right: none;
+	}
+
+	.payment-product-container {
+		width: 80%;
+	}
+
+	/* change product form header positions based on mobile layouts */
+	.product-price-header {
+		position: relative;
+		left: 2rem;
+	}
+
+	.product-quantity-header {
+		position: relative;
+		left: 1rem;
+	}
+
+}

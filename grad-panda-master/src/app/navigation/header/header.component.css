@@ -1,0 +1,32 @@
+li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: dimgray;
+	font-family: futura-pt, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+a:hover, a:active {
+	color: lightgray;
+}
+
+img {
+	height: 4rem;
+	width: 12rem;
+}
+
+.navigation-items {
+	color: 
+}
+
+#header {
+	background: transparent;
+	color: dimgray;
+	margin-top: 1rem;
+}

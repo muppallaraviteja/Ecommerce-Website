@@ -1,0 +1,61 @@
+img {
+	width: 100%;
+	height: 400px;
+}
+
+p {
+	text-align: center;
+}
+
+section {
+	padding-bottom: 2rem;
+}
+
+/deep/ .mat-input-placeholder {
+	font-family: futura-pt, sans-serif;
+	font-weight: 300;
+	font-size: 1.5rem;
+}
+
+/deep/ .mat-spinner circle {
+	stroke: #8ABAD3;
+}
+
+.login {
+	padding-top: 1rem;
+	padding-bottom: 4rem;
+}
+
+button {
+	background-color: #8ABAD3;
+	font-size: 1.5rem;
+	font-family: futura-pt, sans-serif;
+	font-weight: 300;
+	color: white;
+}
+
+.login-text {
+	position: absolute;
+	bottom: 10%;
+	color: white;
+	left: 25%;
+}
+
+.login-top-banner {
+	position: relative;
+}
+
+#main_text, #sub_text {
+	text-align: center;
+}
+
+#main_text {
+	font-size: 8rem;
+	margin: 1rem auto;
+}
+
+#sub_text {
+	font-size: 2rem;
+	font-weight: 100;
+}
+

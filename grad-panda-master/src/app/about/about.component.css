@@ -1,0 +1,85 @@
+.about {
+	width: 100%;
+	margin: 4rem auto 2rem auto;
+}
+
+.about-title-container, .about-text-container {
+	width: 50%;
+}
+
+.about-text-container {
+	border-left: 1px solid;
+}
+
+.about-text {
+	width: 60%;
+	margin-right: 2rem;
+}
+
+.about-text > p {
+	text-align: left;
+	font-size: 1.2rem;
+}
+
+.about-title {
+	font-size: 3rem;
+	text-align: center;
+	width: 70%;
+}
+
+.carousel-label {
+	position: absolute;
+	z-index: 20;
+	left: 450px;
+	color: white;
+}
+
+#main-title {
+	text-align: center;
+	font-size: 8rem;
+	margin-bottom: 0.5rem;
+}
+
+.panda-container {
+	text-align: center;
+}
+
+#subtitle {
+	margin-top: 0.5rem;
+	font-size: 2rem;
+	text-align: center;
+}
+
+p {
+  font-family: futura-pt, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	margin: 0 0 2rem 0;
+}
+
+@media screen and (max-width: 600px) {
+	.about {
+		align-items: center;
+	}
+	
+	.about-text {
+		text-align: center;
+		width: 80%;		
+		margin: 2rem 0 0 0;
+	}
+	
+	.about-text-container {
+		border-left: none;
+		width: 100%;
+	}
+	
+	.about-title {
+		width: 100%;
+		font-size: 1.5rem;
+	}
+	
+	.about-title-container {
+		border-bottom: 1px solid;
+		width: 80%;
+	}
+}

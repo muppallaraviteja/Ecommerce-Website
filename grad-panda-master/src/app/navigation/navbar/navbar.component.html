@@ -1,0 +1,23 @@
+<mat-toolbar id="navbar" color="primary">
+	<div fxHide.gt-xs>
+		<button mat-icon-button>
+			<mat-icon>menu</mat-icon>
+		</button>
+	</div>
+	<div fxFlex fxLayout fxLayoutAlign="center" fxHide.xs>
+		<ul fxLayout fxLayoutGap="5rem" class="navigation-items">
+			<li routerLink="/about">
+				<a>About</a>
+			</li>
+			<li routerLink="/products">
+				<a>Product Catalog</a>
+			</li>
+			<li routerLink="/orders">
+				<a>Order Summary</a>
+			</li>
+			<li routerLink="/contact">
+				<a>Contact Us</a>
+			</li>
+		</ul>
+	</div>
+</mat-toolbar>

@@ -1,0 +1,15 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*@import "assets/midori-app-theme.scss";*/
+
+html, body {
+	font-family: 'Roboto', sans-serif;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	height: 100%;
+	font-family: futura-pt, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}

@@ -1,0 +1,60 @@
+.cart {
+	margin-bottom: 8rem;
+}
+
+
+.card-container {
+	margin: 3rem auto;
+	width: 60%;
+}
+
+#cart-title {
+	font-weight: 400;
+	font-size: 2.5rem;
+}
+
+#back,
+#checkout {
+	margin-bottom: 2rem;
+}
+
+
+#sum,
+#afterTaxSum {
+	margin: 1rem 30% 1rem auto;
+	font-weight: 200;
+}
+
+#title {
+	flex-grow: 2;
+}
+
+img {
+	max-height: 350px;
+	max-width: 900px;
+}
+
+.card-item-image {
+	max-height: 150px;
+	max-width: 150px;
+}
+
+@media screen and (max-width: 600px) {
+
+	.card-item-image {
+		max-height: 50px;
+		max-width: 50px;
+	}
+
+	.mat-card {
+		margin-left: 1rem;
+	}
+
+	#quantity-select {
+		margin-right: 0 !important;
+	}
+
+	#sum, #afterTaxSum {
+		margin: 1rem auto;
+	}
+}

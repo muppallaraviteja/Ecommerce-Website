@@ -1,0 +1,143 @@
+/* select page position and font style*/
+.product-page {
+	position: relative;
+	border-radius: 0.5rem;
+	font-family: futura-pt, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	overflow-y: hidden;
+}
+
+/* select controls width to be 15% of page width; add top margin*/
+.product-controls {
+	width: 15%;
+	margin-top: 5rem;
+}
+
+/* set product container to be 65% of width; add top margin and set position*/
+.product-container {
+	max-width: 1200px;
+	position: relative;
+	width: 65%;
+	margin-top: 5rem;
+}
+
+.mat-select {
+	max-width: 20%;
+}
+
+/* overwrite default Material UI theme color on certain controls to green*/
+/deep/ .mat-radio-button.mat-accent .mat-radio-inner-circle {
+	background-color: #88B04B;
+}
+
+/deep/ .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+	background-color: #88B04B;
+}
+
+/deep/ .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+	border-color: #88B04B;
+}
+
+/deep/ .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+	background-color: #88B04B;
+}
+
+/deep/ .mat-accent .mat-slider-track-fill {
+	background-color: #88B04B;
+}
+
+/deep/ .mat-accent .mat-slider-thumb {
+	background-color: #88B04B;
+}
+
+/deep/ .mat-slider-focus-ring {
+	background-color: #88B04B;
+}
+
+/deep/ .mat-accent .mat-slider-thumb-label {
+	background-color: #88B04B;
+}
+
+/* add padding to text */
+a {
+	width: 25%;
+	padding: 1rem 2rem;
+}
+
+/* center the text */
+p {
+	text-align: center;
+}
+
+/* let image take the entire banner width*/
+.product-banner > img {
+	width: 100%;
+}
+
+/* set width and height of the product images*/
+a > img {
+	width: 250px;
+	height: 250px;
+	border-radius: 1rem;
+}
+
+label {
+	margin-bottom: 0;
+	font-weight: 700;
+}
+
+.category {
+	width: 40%;
+}
+
+/* display radio buttons vertically */
+.radio-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.radio-button {
+	margin: 0.5rem;
+}
+
+/* set top margin for progress spinner */
+.spinner-container {
+	margin-top: 2rem;
+}
+
+/* customized settings for mobile layout */
+@media only screen and (max-width: 600px) {
+	/* remove banner on smaller screen */
+	.product-banner {
+		display: none;
+	}
+	
+	.product-container {
+		margin-top: 2rem;
+	}
+	
+	/* center products on smaller screen */
+	.product-content {
+		align-items: center;
+	}
+	
+	/* hide all product filters */
+	.product-controls {
+		display: none;
+		margin-top: 1rem;
+		width: 100%;
+	}
+	
+	/* change radio group display to row */
+	.radio-group {
+		flex-wrap: wrap;
+		width: 80%;
+		flex-direction: row;
+	}
+	
+	.school-button {
+		width: 25%;
+	}
+	
+}

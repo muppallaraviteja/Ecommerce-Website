@@ -1,0 +1,58 @@
+<!--use flexbox to set the page display as column-based-->
+<div class="product-page" fxLayout="column">
+	<div class="product-banner">
+		<img src="../../assets/product_banner_optimized.png" alt="product banner" />
+	</div>
+<!--	hide if still loading; set display for desktop and mobile layouts-->
+	<div *ngIf="!loading" class="product-content" fxLayout="row" fxLayout.lt-md="column">
+		<div fxFlex fxLayout="column" fxLayoutAlign="flex-start center" fxLayoutGap="1em" class="product-controls">
+<!--			hide control when screen size less than md-->
+			<button fxShow.lt-md="false" mat-raised-button color="ascent" (click)="clearFilter()">Clear Filters</button>
+			<mat-label fxShow.lt-md="false">Category</mat-label>
+<!--			chain select options to categories; bind select to changeCategory function-->
+			<mat-select fxShow.lt-md="false" id="category-selector" placeholder="Select" class="category" [(ngModel)]="selectedCategory"(selectionChange)="changeCategory($event.value)">
+				<mat-option *ngFor="let category of categories" [value]="category.value">
+					{{category.viewValue}}
+				</mat-option>
+			</mat-select>
+			
+			<span fxShow.lt-md="false">Price Range</span>
+			<!-- set price slider listening to user action -->
+			<mat-slider fxShow.lt-md="false" id="price-slider" thumbLabel (input)="onPriceChange($event.value)" min="1" max="200" step="10" [value]="maxPrice"></mat-slider>
+
+			<!-- set year control listening on user selection  -->
+			<label fxShow.lt-md="false" id="year-radio-group-label">Year</label>
+			<mat-radio-group fxShow.lt-md="false" aria-labelledby="radio-group-label" class="radio-group" [(ngModel)]="selectedYear" (change)="onYearChange($event.value)">
+				<mat-radio-button class="radio-button" *ngFor="let year of years" [value]="year">
+					{{year}}
+				</mat-radio-button>
+			</mat-radio-group>
+
+			<!-- set school control listening on user selection  -->
+			<label id="school-radio-group-label">School</label>
+			<mat-radio-group aria-labelledby="radio-group-label" id="radio-school" class="radio-group" [(ngModel)]="selectedSchool" (change)="onSchoolChange($event.value)">
+				<mat-radio-button color="accent" class="school-button radio-button" *ngFor="let school of schools" [value]="school">
+					{{school}}
+				</mat-radio-button>
+			</mat-radio-group>
+		</div>
+		
+		<!-- actual product div -->
+		<div class="product-container" fxLayout="row wrap" fxLayoutGap="0.5rem" fxLayoutAlign="center flex-start">
+			<!-- loop through products and apply filters with pipes -->
+			<div class="product" fxFlex.gt-xs="50%" fxFlex.gt-md="30%" *ngFor="let product; of products | matchesCategory:selectedCategory | matchesPriceRange:maxPrice | matchesYear:selectedYear | matchesSchool:selectedSchool">
+				<!-- attach link to product detail page -->
+				<a routerLink="/products/{{product.itemId}}"><img src="{{product.imageUrl}}" alt="product" /></a>
+				<p>{{product.title}}</p>
+				<p>${{product.price}}</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!--show spinner while loading page-->
+<div class="spinner-container" fxLayoutAlign="center center" *ngIf="loading">
+	<mat-spinner
+		diameter="200"
+		class="spinner">
+	</mat-spinner>
+</div>

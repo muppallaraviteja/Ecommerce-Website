@@ -1,0 +1,76 @@
+<section id="payment-page" fxLayout="row" fxLayout.lt-md="column">
+	<div class="payment-form-container" fxLayoutAlign="center flex-start">
+		<form #f="ngForm" fxLayout="column" fxLayoutAlign="center center" fxLayoutGao="0.5rem">
+			<mat-label class="payment-form-header">Shipping Address</mat-label>
+			<div class="row" fxLayout="row" fxLayoutGap="1rem">
+				<mat-form-field class="row-medium">
+					<mat-label>First Name</mat-label>
+					<input matInput required ngModel name="fn" type="text" />
+				</mat-form-field>
+				<mat-form-field class="row-medium">
+					<mat-label>Last Name</mat-label>
+					<input matInput required ngModel name="ln" type="text" />
+				</mat-form-field>
+			</div>
+			<mat-form-field class="row">
+				<mat-label>Address</mat-label>
+				<input matInput required ngModel name="address" type="text" />
+			</mat-form-field>
+			<mat-form-field class="row">
+				<mat-label>Apt/Suite Number</mat-label>
+				<input matInput ngModel name="aptNum" type="text" />
+			</mat-form-field>
+			<div class="row" fxLayout="row" fxLayoutGap="0.5rem">
+				<mat-form-field id="city">
+					<mat-label>City</mat-label>
+					<input matInput required ngModel name="city" type="text" />
+				</mat-form-field>
+				<mat-form-field id="state">
+					<mat-label>State (2-digit Code)</mat-label>
+					<input matInput required ngModel name="state" type="text" minlength="2" maxlength="2"/>
+				</mat-form-field>
+				<mat-form-field id="zip">
+					<mat-label>Zip</mat-label>
+					<input matInput required ngModel name="zip" type="number" minlength="5"/>
+				</mat-form-field>
+			</div>
+			<mat-form-field class="row">
+				<mat-label>Phone</mat-label>
+				<input matInput required ngModel name="phone" type="number" />
+			</mat-form-field>
+			<button mat-raised-button id="payment-button" [disabled]="f.invalid" (click)="pay(unpaidProducts, total)">Let Midori Wrap Everything Up!</button>
+		</form>
+	</div>
+	<div class="payment-summary" fxLayout="column" fxLayoutAlign="flex-start center">
+		<mat-label class="payment-form-header">Shopping Summary</mat-label>
+		<div fxLayout="row" fxLayoutAlign="center center" class="payment-product-container">
+			<section fxShow.lt-md="false" class="product-header product-card">
+				<section fxLayout="column" fxLayoutGap="0.5rem">
+					Product
+				</section>
+			</section>
+			<div class="product-data" fxLayoutAlign="center center">
+				<mat-label class="product-header product-title">Title</mat-label>
+				<mat-label class="product-price-header product-price">Price</mat-label>
+				<mat-label class="product-quantity-header product-quantity">Quantity</mat-label>
+			</div>
+		</div>
+		<div *ngFor="let product of unpaidProducts" fxLayout="row" fxLayoutAlign="center center" class="payment-product-container">
+			<mat-card fxShow.lt-md="false" class="product-card">
+				<mat-card-content fxLayout="column" fxLayoutGap="0.5rem">
+					<img class="card-item-image" src="{{product.imageUrl}}" alt="product" />
+				</mat-card-content>
+			</mat-card>
+			<div class="product-data" fxLayoutAlign="center center">
+				<mat-label class="product-title">{{product.title}}</mat-label>
+				<mat-label class="product-price">${{product.price}}</mat-label>
+				<mat-label class="product-quantity">{{product.quantity}}</mat-label>
+			</div>
+		</div>
+		<div class="price-summary" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="0.5rem">
+			<output class="price-summary-data">Sum: ${{sum | number:'1.0-2'}}</output>
+			<output class="price-summary-data">Tax: ${{tax | number:'1.0-2'}}</output>
+			<output class="price-summary-data">Total: ${{total | number:'1.0-2'}}</output>
+		</div>
+	</div>
+</section>

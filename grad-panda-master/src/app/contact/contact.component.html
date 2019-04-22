@@ -1,0 +1,31 @@
+<section>
+	<section class="carousel">
+		<div fxShow.lt-md="false">
+			<img src="../../assets/contact_banner_optimized.png" alt="contact banner" width="100%"/>
+ 		</div>
+		<section class="contact-content" fxLayoutAlign="center center" fxLayout.lt-md="column">
+			<div class="contact-column" id="contact-column-left">
+				<p id="top-text">Questions? Doubts? We're here for you.</p>
+				<p class="contact-heading">How to reach us?</p>
+				<p>(800) 667-3829</p>
+				<p>6200 Panda Drive, Pasadena, CA, 91108</p>
+				<p>info@gradpanda.com</p>
+			</div>
+			<div class="contact-column" fxLayoutAlign="flex-start center">
+				<section id="message-card">
+					<form #f="ngForm" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1rem">
+						<mat-form-field class="short-input">
+							<input matInput required ngModel name="name" type="text" placeholder="Your Name" />
+						</mat-form-field>
+						<mat-form-field class="long-input">
+							<input matInput required ngModel name="email" email type="email" placeholder="Your Email" />
+						</mat-form-field>
+						<mat-form-field class="long-input">
+							<textarea matInput required ngModel name="message" maxlength="256" type="text" placeholder="Message" rows="3" #message></textarea>
+						</mat-form-field>
+						<button mat-raised-button color="ascent" (click)="sendContactMsg(message.value)" [disabled]="f.invalid">Let Midori hear you!</button>
+					</form>
+				</section>
+			</div>
+		</section>
+	</section>

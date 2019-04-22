@@ -1,0 +1,40 @@
+a {
+	text-decoration: none;
+	color: dimgray;
+}
+
+a:hover,
+a:active {
+	color: black;;
+}
+
+li:hover {
+	opacity: 70%;
+	cursor: pointer;
+
+}
+
+.navigation-items {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+mat-toolbar {
+	border-radius: 3px;
+	font-family: futura-pt, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+@media(max-width: 959px) {
+	mat-toolbar {
+		border-radius: 0px;
+	}
+}
+
+#navbar {
+	width: 60%;
+	margin: 1rem auto;
+	background-color: transparent;
+}

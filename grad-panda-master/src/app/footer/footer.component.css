@@ -1,0 +1,41 @@
+@import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+
+.mat-toolbar-row {
+	background-color: #fafafa;
+}
+
+.mat-toolbar-row {
+	height: 2rem;
+}
+
+.footer {
+	width: 100%;
+	float: left;
+	margin-top: 2rem;
+}
+
+.fab {
+	font-size: 1.5rem;
+	margin: auto 0.3rem;
+}
+
+.footer a {
+	display: inline-block;
+	margin: auto 1rem;
+	font-size: 1rem;
+}
+
+.footer_text a {
+	color: darkgray;
+	text-decoration: none;
+}
+
+.footer a:hover {
+	cursor: pointer;
+	color: black;
+}
+
+.acknowledgement h6 {
+	font-size: 0.8rem;
+	color: darkgray;
+}

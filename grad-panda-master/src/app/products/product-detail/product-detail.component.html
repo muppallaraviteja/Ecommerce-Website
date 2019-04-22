@@ -1,0 +1,29 @@
+<section id="container" fxLayout="row" fxLayout.lt-md="column" *ngIf="!loading">
+	<img src="{{product.imageUrl}}" alt="product" />
+	<div class="content" fxLayout="column">
+		<div fxFlex fxLayout="column" fxLayoutAlign="center center">
+			<p id="title">{{product.title}}</p>
+			<p> $ {{product.price}}</p>
+			<p class="description">{{product.description}}</p>
+		</div>
+		<div fxLayout="column" fxLayoutAlign="center center" class="actions">
+			<div class="size-select" fxLayout="row" fxLayoutGap="0.5rem">
+				<mat-label class="size-label">Size</mat-label>
+				<mat-select name="size" placeholder="Select" ngModel>
+					<mat-option *ngFor="let size of sizes" [value]="size.value">
+						{{ size.viewValue }}
+					</mat-option>
+				</mat-select>
+			</div>
+			<button mat-raised-button color="ascent" (click)="addItemToCart(product)">Add to Cart</button>
+			<a class="home" routerLink="/products"><button mat-raised-button color="ascent">Back to Products</button></a>
+		</div>
+	</div>
+</section>
+<div class="spinner-container" fxLayoutAlign="center center" *ngIf="loading">
+	<mat-spinner
+		diameter="200"
+		class="spinner">
+	</mat-spinner>
+</div>
+

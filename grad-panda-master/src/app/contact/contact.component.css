@@ -1,0 +1,59 @@
+button {
+	background-color: #8ABAD3;
+	color: white;
+}
+
+img {
+	height: 400px;
+}
+
+p {
+	font-family: futura-pt, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	text-align: center;
+}
+
+.contact-content {
+	margin-top: 3rem;
+}
+
+.contact-heading {
+	font-weight: 400;
+	font-size: 2rem;
+}
+
+.contact-column {
+	width: 50%;
+	border-left: 2px solid gray;
+}
+
+.long-input {
+	width: 100%;
+}
+
+.short-input {
+	margin-right: auto;
+}
+
+#contact-column-left {
+	border-left: none;
+}
+
+#message-card {
+	width: 60%;
+	margin: 0 auto;
+}
+
+#top-text {
+	font-size: 2.5rem;
+	font-weight: 200;
+}
+
+@media screen and (max-width: 600px) {
+	.contact-column {
+		width: 100%;
+		border-left: none;
+		margin-top: 2rem;
+	}
+}
